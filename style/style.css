@@ -1,0 +1,144 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  padding: 10 30px;
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px 1fr 100px;
+      grid-template-rows: 100px 1fr 100px;
+}
+
+header {
+  position: relative;
+  left: -10px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header i {
+  color: white;
+  padding: 20px;
+}
+
+header h1 {
+  color: white;
+  font-family: "Cinzel", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+main {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+}
+
+main .card {
+  margin-top: 50px;
+  padding: 10px;
+  width: 300px;
+  min-height: 150px;
+  border-radius: 20px;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: white;
+  font-family: "Quattrocento Sans";
+  font-weight: 600;
+}
+
+main .card p {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+footer {
+  position: relative;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  width: 100%;
+  height: 100%;
+  background: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer button {
+  padding: 0;
+  border: 0;
+  position: absolute;
+  top: 0;
+  margin: 20px auto;
+  height: 60px;
+  width: 300px;
+  border-radius: 10px;
+  background: #000;
+  color: white;
+  font-family: "Quattrocento Sans";
+  font-size: 12px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=style.css.map */
