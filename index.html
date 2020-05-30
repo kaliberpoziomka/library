@@ -12,6 +12,49 @@
         <i class="fas fa-bookmark fa-lg"></i>
         <h1>Library</h1>
     </header>
+   <div class="card-input">
+       <form name="form">
+           <div class="exit-form">
+               x
+           </div>
+           <div class="input-wrap">
+               <input type="text" name="title" id="input-title" required>
+               <label for="title">
+                   <span>Title:</span>
+               </label>
+           </div>
+           <div class="input-wrap">
+            <input type="text" name="author" id="input-author" required>
+            <label for="author">
+                <span>Author:</span>
+            </label>
+           </div>
+           <div class="input-wrap">
+            <input type="text" name="pages" id="input-pages" required>
+            <label for="pages">
+                <span>Number of pages:</span>
+            </label>
+           </div>
+           <div class="input-wrap input-wrap-radio">
+            <div class="radio-label-wrap">
+                <input type="radio" name="status" id="input-status1" value="yes" required>
+                <label class="yes-label" for="status">Yes</label>
+            </div>
+            <div class="radio-label-wrap">
+                <input type="radio" name="status" id="input-status2" value="no" required>
+                <label  class="no-label" for="status" >No</label>
+            </div>
+            <label for="pages">
+                Did you read it?
+            </label>
+           </div>
+            <div class="button-wrap">
+                <button class="form-button">
+                    <span>Ready!</span>
+                </button>
+            </div>
+       </form>
+   </div>
     <main>
         <div class="card">
             <p class="book-title">Title</p>
@@ -25,9 +68,10 @@
             <p class="book-pages">90</p>
             <p class="book-status">Read</p>
         </div>
+        
     </main>  
     <footer>
-        <button>
+        <button class="footer-button">
             <h2>Add book</h2>
         </button>
     </footer>  

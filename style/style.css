@@ -24,6 +24,7 @@ body {
 header {
   position: relative;
   left: -10px;
+  padding-right: 10px;
   -ms-grid-row: 1;
   grid-row: 1;
   width: 100%;
@@ -51,6 +52,161 @@ header h1 {
   font-weight: 400;
 }
 
+.card-input {
+  display: none;
+  position: absolute;
+  left: -10px;
+  top: 0;
+  background: rgba(100, 78, 50, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.card-input form {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px;
+  width: 300px;
+  height: 600px;
+  border-radius: 20px;
+  background: rgba(255, 236, 255, 0.9);
+}
+
+.card-input form .exit-form {
+  position: absolute;
+  right: 20px;
+  color: #333;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.card-input form .exit-form:hover {
+  color: #5f1010;
+}
+
+.card-input form .input-wrap {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: 45px 0;
+  overflow: hidden;
+}
+
+.card-input form .input-wrap label {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-input form .input-wrap label span {
+  width: 280px;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  font-family: "Quattrocento Sans", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.card-input form .input-wrap label span::after {
+  position: relative;
+  bottom: -33px;
+  left: -80%;
+  display: block;
+  content: '';
+  width: 280px;
+  height: 3px;
+  background: rgba(255, 0, 55, 0.7);
+  border-radius: 5px;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+.card-input form .input-wrap input[type="text"] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #333;
+  font-family: .card-input form .input-wrap input[type="text"] "Quattrocento Sans", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.card-input form .input-wrap input[type="text"]:valid + label span::after {
+  background: blue;
+  -webkit-transform: translateX(80%);
+          transform: translateX(80%);
+}
+
+.card-input form .input-wrap-radio {
+  padding-top: 40px;
+  height: 100px;
+  font-family: "Cinzel", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.card-input form .input-wrap-radio .radio-label-wrap {
+  position: relative;
+  margin-top: 0;
+  width: 100%;
+  height: 30px;
+  display: block;
+}
+
+.card-input form .input-wrap-radio .radio-label-wrap label {
+  position: absolute;
+  top: 2px;
+  left: 30px;
+  display: inline-block;
+  font-family: "Quattrocento Sans", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.card-input .button-wrap {
+  width: 100%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-input .button-wrap button {
+  background: #333333;
+  border: none;
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  color: white;
+  font-family: "Cinzel", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.card-input .button-wrap button:hover {
+  background: #2b3525;
+}
+
 main {
   -ms-grid-row: 2;
   grid-row: 2;
@@ -63,9 +219,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
