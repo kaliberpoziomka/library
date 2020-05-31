@@ -1,5 +1,4 @@
 // global variables
-let card = document.querySelector(".card");
 let bookTitle = document.querySelector(".book-title");
 let bookAuthor = document.querySelector(".book-author");
 let bookPages = document.querySelector(".book-pages");
@@ -10,12 +9,16 @@ let cardInput = document.querySelector(".card-input");
 let formButton = document.querySelector(".form-button");
 
 
+
+
 // form variables
 let titleInput = document.getElementById('input-title');
 let authorInput = document.getElementById('input-author');
 let pagesInput = document.getElementById('input-pages');
-let statusInputYes = document.getElementById('input-status1');
-let statusInputNo = document.getElementById('input-status2');
+let statusInput;
+
+let form = document.querySelector('form');
+
 
 // form save data
 let savedTitle;
@@ -23,12 +26,18 @@ let savedAuthor;
 let savedPages;
 let savedStatus;
 
+// card counter
+let cardCounter = 1;
+
 
 
 // button functions
 exitForm.addEventListener('click', () => {
     cardInput.style.display = "none";
 });
+
+
+
 
 footerButton.addEventListener('click', () => {
     cardInput.style.display = "block";
@@ -40,19 +49,26 @@ document.querySelector('form').addEventListener('submit', function (e) {
     //prevent the normal submission of the form
     e.preventDefault();
 
+    statusInput = document.querySelector('input[type="radio"]:checked').value;
+
     savedTitle = titleInput.value;
     savedAuthor = authorInput.value;
     savedPages = pagesInput.value;
-    savedStatus = statusInputYes.value;
+    savedStatus = statusInput;
+
     
+    let newCard = new Book(savedTitle, savedAuthor, savedPages, savedStatus);
+    newCard.createCard();
+    
+
     titleInput.value = '';
     authorInput.value = '';
     pagesInput.value = '';
-    statusInputYes = '';
+    statusInput = '';
     cardInput.style.display = "none";
 
-    let newCard = new Book(savedTitle, savedAuthor, savedPages, savedStatus);
-    newCard.createCard();
+    
+
 });
 
 
@@ -72,14 +88,25 @@ function Book(title, author, pages, status) {
             this.status = 'Not read';
         };
 
+        
+        
         document.querySelector("main").innerHTML += 
-        `<div class="card">
+        `<div class="card" id="card${cardCounter}">
+        <div class="card-exit" id="card-exit${cardCounter}" onclick="removeCard(${cardCounter})">X</div>
         <p class="book-title">${this.title}</p>
         <p class="book-author">${this.author}</p>
         <p class="book-pages">${this.pages}</p>
         <p class="book-status">${this.status}</p>
-    </div>`;
+        </div>`;
+        
+
+        cardCounter++;
+        
+        
     };
 };
 
-
+// function to remove cards
+function removeCard(number) {
+    document.getElementById(`card${number}`).remove();
+}
